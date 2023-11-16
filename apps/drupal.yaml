@@ -13,7 +13,7 @@ metadata:
     helm:
       parameters:
       - name: drupalEmail
-        value: antonstal@yandex.ru
+        value: antonstal1@yandex.ru
       - name: drupalPassword
         value: qweqweqwe
       - name: externalDatabase.host
