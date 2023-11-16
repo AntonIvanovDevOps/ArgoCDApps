@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: drupal
+  namespace: argocd
+  spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: drupal
+    helm:
+      parameters:
+      - name: drupalEmail
+        value: antonstal@yandex.ru
+      - name: drupalPassword
+        value: qweqweqwe
+      - name: externalDatabase.host
+        value: 192.168.202.4
+      - name: externalDatabase.database
+        value: bn_drupal
+      - name: externalDatabase.password
+        value: bn_drupal
+      - name: ingress.enabled
+        value: "true"
+      - name: ingress.hostname
+        value: drupal.k8s-2.sa
+      - name: ingress.ingressClassName
+        value: nginx
+      - name: mariadb.enabled
+        value: "false"
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 16.1.3
+  syncPolicy:
+    automated: {}
