@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: drupal
   namespace: argocd
-  spec:
+spec:
   destination:
     namespace: default
     server: https://kubernetes.default.svc
