@@ -13,7 +13,7 @@ spec:
     helm:
       parameters:
       - name: nfs.path
-        value: /mnt/IT-Academy/nfs-data/sa2-25-23/
+        value: /mnt/IT-Academy/nfs-data/sa2-25-23/Ivanov/
       - name: nfs.server
         value: 192.168.37.105
       - name: serviceAccount.name
